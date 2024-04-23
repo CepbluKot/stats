@@ -246,7 +246,7 @@ while True:
     F = S_fact_2 / S_e_2
     F_critical = stats.f.ppf(1 - alpha, S_fact, S_e)
 
-
+    
 
     # Проверка статистической значимости коэффициентов регрессии (t-тест)
     t_critical = stats.t.ppf(1 - alpha / 2, k_e)
@@ -262,8 +262,13 @@ while True:
     for p_val_i, x_kay in zip(range(1, len(p_values)), all_variables_x_dic.keys()):
         p_values_dic[x_kay] = p_values[p_val_i]
 
-    print(p_values_dic)
-    
+    print('Q_round',Q_round)
+    print('T',T)
+    print('S_fact_2, S_e_2,S_y_2', S_fact_2, S_e_2,S_y_2)
+    print('S_fact, S_e, S_y',S_fact, S_e, S_y)
+    print('p_values_dic',p_values_dic)
+
+
     print(f'\nШаг {count}')
     text = f'{Q_round[0]}'
     for key, Q_i in zip(all_variables_x_dic.keys(), Q_round[1:]):
